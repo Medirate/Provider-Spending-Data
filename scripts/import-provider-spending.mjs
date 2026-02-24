@@ -7,7 +7,7 @@ import { from as copyFrom } from 'pg-copy-streams';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DATA_DIR = path.join(__dirname, 'medicaid-provider-spending_part258');
+const DATA_DIR = path.join(__dirname, '..', 'medicaid-provider-spending_part258');
 const TABLE_NAME = 'provider_spending';
 
 const DATABASE_URL = process.env.DATABASE_URL;

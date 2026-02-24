@@ -11,8 +11,8 @@ node_modules/
 medicaid-provider-spending_part258/
 
 # Next.js
-dashboard/.next/
-dashboard/out/
+.next/
+out/
 
 # Build and misc
 .vercel
