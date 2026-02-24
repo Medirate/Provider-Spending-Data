@@ -1,4 +1,4 @@
-import { supabase, type ProviderSpendingRow } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured, type ProviderSpendingRow } from "@/lib/supabase";
 import Link from "next/link";
 
 const PAGE_SIZE = 50;
@@ -85,6 +85,23 @@ export default async function DashboardPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center p-6">
+        <div className="max-w-md rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30 p-6 text-center">
+          <h1 className="text-lg font-semibold text-amber-900 dark:text-amber-100">
+            Configuration needed
+          </h1>
+          <p className="mt-2 text-sm text-amber-800 dark:text-amber-200">
+            Set <code className="rounded bg-amber-100 dark:bg-amber-900/50 px-1">NEXT_PUBLIC_SUPABASE_URL</code> and{" "}
+            <code className="rounded bg-amber-100 dark:bg-amber-900/50 px-1">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> in your
+            environment (e.g. Vercel project settings) and redeploy.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const params = await searchParams;
   const [filterOptions, data] = await Promise.all([
     getFilterOptions(),
