@@ -114,7 +114,15 @@ export default async function DashboardPage({
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       <header className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-6 py-4">
-        <h1 className="text-xl font-semibold">Provider Spending Dashboard</h1>
+        <div className="flex items-center gap-4">
+          <h1 className="text-xl font-semibold">Provider Spending Dashboard</h1>
+          <Link
+            href="/drug-spending"
+            className="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-400"
+          >
+            Medicaid drug spending →
+          </Link>
+        </div>
         <p className="text-sm text-zinc-500 mt-1">
           Medicaid provider spending data • Page {data.page}
         </p>
