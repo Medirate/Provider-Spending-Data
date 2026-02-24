@@ -1,0 +1,20 @@
+# Env and secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Data files (do not commit)
+*.zip
+medicaid-provider-spending_part258/
+
+# Next.js
+dashboard/.next/
+dashboard/out/
+
+# Build and misc
+.vercel
+*.tsbuildinfo
+.DS_Store
